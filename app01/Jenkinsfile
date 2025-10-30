@@ -22,7 +22,9 @@ pipeline {
 
         stage('Build the maven code') {
             steps {
-                sh 'mvn clean install'
+                dir('app01') {
+                    sh 'mvn clean install'
+                }
             }
         }
 
